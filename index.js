@@ -29,7 +29,7 @@ function createWeatherContainer (data) {
 
                 const degree = document.createElement("div");
                 degree.classList.add("degree");
-                degree.textContent = `${Math.round(data["main"]["temp"])} °C`;
+                degree.textContent = `${Math.round(data["main"]["temp"])} °`;
                 containerWeather.appendChild(degree);
 
                 const situation = document.createElement("div");
@@ -38,7 +38,7 @@ function createWeatherContainer (data) {
                 containerWeather.appendChild(situation);
 
             const containerIcon = document.createElement("div");
-            containerIcon.classList.add("situation");
+            containerIcon.classList.add("container-icon");
             container.appendChild(containerIcon);
 
                 const icon = document.createElement("img");
@@ -53,7 +53,14 @@ function createWeatherContainer (data) {
 axios.get("https://api.openweathermap.org/data/2.5/weather?units=metric&lat=41.01&lon=29.02&appid=882853605eda9ba83449e273e5c7e4ca")
 .then((response) => {
     const newBox = createWeatherContainer(response.data);
-    document.body.appendChild(newBox);
-});
+    document.querySelector(".wrap").appendChild(newBox);
+})
+.catch((error) => {
+    console.log(error);
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Bulunduğunuz yerin hava durumu bilgilerine erişilemiyor.";
+    document.querySelector(".wrap").appendChild(errorMessage);
+}
+)
 
 
