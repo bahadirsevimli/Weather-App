@@ -22,6 +22,7 @@ function createWeatherContainer (data) {
         const container = document.createElement("div");
         container.classList.add("container");
         box.appendChild(container);
+        container.style.backgroundImage = `url("/Assets/${data["weather"][0]["main"]}.jpg")`;
 
             const containerWeather = document.createElement("div");
             containerWeather.classList.add("container-weather");
@@ -62,5 +63,6 @@ axios.get("https://api.openweathermap.org/data/2.5/weather?units=metric&lat=41.0
     document.querySelector(".wrap").appendChild(errorMessage);
 }
 )
+
 
 

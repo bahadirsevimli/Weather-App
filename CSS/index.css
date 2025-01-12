@@ -3,6 +3,8 @@
     color: white;
     font-family: "Mulish", serif;
     
+    
+    
 }
 
 body{
@@ -91,6 +93,7 @@ nav{
     gap: 10px;
     padding: 5px;
     background-color: #293248;
+    width: 700px;
 }
 .country{
     font-weight: 300;
@@ -100,18 +103,24 @@ nav{
 .container{
     display: flex;
     justify-content: space-between;
+    background-color: brown;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 700px;
 }
 
 .container-weather{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 10px;
+    padding: 40px 20px;
 
 }
 .degree{
     text-align: center;
     font-size: 80px;
+    height: 100px;
 
 }
 .situation{
@@ -122,4 +131,5 @@ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0 20px;
 }
